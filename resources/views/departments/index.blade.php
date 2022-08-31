@@ -44,6 +44,11 @@
                     <td>
                         <a class="btn btn-success" href="{{ route('departments.edit' ,$department->id) }}">Edit</a>
                         <a class="btn btn-primary" href="{{ route('departments.show' ,$department->id) }}">Show</a>
+                        <form action="{{ route('departments.destroy', $department->id) }}" method="POST" onsubmit="return confirm('Are you sure want to delete this department ?');">
+                            {{ method_field('DELETE') }}
+                            {{ csrf_field() }}
+                            <button class="btn btn-danger" type="submit">Delete</button>
+                        </form>
                     </td>
                 </tr>
                 @endforeach

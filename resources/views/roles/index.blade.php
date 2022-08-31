@@ -42,6 +42,13 @@
                     <td>
                         <a class="btn btn-success" href="{{ route('roles.edit' ,$role->id) }}">Edit</a>
                         <a class="btn btn-primary" href="{{ route('roles.show' ,$role->id) }}">Show</a>
+                        @if($role->name != 'Admin')
+                        <form action="{{ route('roles.destroy', $role->id) }}" method="POST" onsubmit="return confirm('Are you sure want to delete this role ?');">
+                            {{ method_field('DELETE') }}
+                            {{ csrf_field() }}
+                            <button class="btn btn-danger" type="submit">Delete</button>
+                        </form>
+                        @endif
                     </td>
                 </tr>
                 @endforeach

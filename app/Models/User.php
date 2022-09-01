@@ -49,4 +49,9 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Department::class);
     }
+    
+    public function deatils()
+    {
+        return $this->hasOne(UserDetail::class);
+    }
 }

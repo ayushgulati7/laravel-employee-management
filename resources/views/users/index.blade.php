@@ -36,11 +36,12 @@
             </thead>
             <tbody>
 
-                @foreach ($users as $user)
+                @foreach ($users as $key => $user)
                 <tr>
-                    <th scope="row">{{$user->id}}</th>
+                    <th scope="row">{{$key+1}}</th>
                     <td>{{$user->name}}</td>
                     <td>{{$user->email}}</td>
+                    <td>{{isset($user->departments->first()->name) ? $user->departments->first()->name : ""}}</td>
                     <td>
                         <a class="btn btn-success" href="{{ route('users.edit' ,$user->id) }}">Edit</a>
                         <a class="btn btn-primary" href="{{ route('users.show' ,$user->id) }}">Show</a>

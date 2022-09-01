@@ -36,9 +36,9 @@
             </thead>
             <tbody>
 
-                @foreach ($departments as $department)
+                @foreach ($departments as $key=>$department)
                 <tr>
-                    <th scope="row">{{$department->id}}</th>
+                    <th scope="row">{{$key+1}}</th>
                     <td>{{$department->name}}</td>
                     <td>{{$department->description}}</td>
                     <td>

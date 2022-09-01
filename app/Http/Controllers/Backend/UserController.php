@@ -54,6 +54,8 @@ class UserController extends Controller
 
         $user->assignRole($request->input('role'));
         $user->departments()->attach($request->input('department'));
+        
+        $details = $user->deatils()->create($request->all());
 
         return redirect()->route('users.index')->with('message', 'User saved successfully');
     }

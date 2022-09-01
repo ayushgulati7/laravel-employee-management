@@ -35,9 +35,9 @@
             </thead>
             <tbody>
 
-                @foreach ($roles as $role)
+                @foreach ($roles as $key => $role)
                 <tr>
-                    <th scope="row">{{$role->id}}</th>
+                    <th scope="row">{{$key+1}}</th>
                     <td>{{$role->name}}</td>
                     <td>
                         <a class="btn btn-success" href="{{ route('roles.edit' ,$role->id) }}">Edit</a>

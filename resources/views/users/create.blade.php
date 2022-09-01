@@ -41,6 +41,63 @@
                         </div>
 
                         <div class="row mb-3">
+                            <label for="mobile" class="col-md-4 col-form-label text-md-end">{{ __('Contact no.') }}</label>
+
+                            <div class="col-md-6">
+                            <input id="mobile" type="tel" class="form-control @error('mobile') is-invalid @enderror" name="mobile" value="{{ old('mobile') }}" required autocomplete="mobile">
+                                @error('mobile')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <label for="address" class="col-md-4 col-form-label text-md-end">{{ __('Address') }}</label>
+
+                            <div class="col-md-6">
+                                <textarea id="address" class="form-control @error('address') is-invalid @enderror" name="address" rows="2" cols="50"></textarea>
+                                @error('address')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <label for="dob" class="col-md-4 col-form-label text-md-end">{{ __('DOB') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="dob" type="date" class="form-control @error('dob') is-invalid @enderror" name="dob" value="{{ old('dob') }}" required autocomplete="dob">
+
+                                @error('dob')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                        </div>
+
+
+
+                        <div class="row mb-3">
+                            <label for="joining_date" class="col-md-4 col-form-label text-md-end">{{ __('Joining Date') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="joining_date" type="date" class="form-control @error('joining_date') is-invalid @enderror" name="joining_date" value="{{ old('joining_date') }}" required autocomplete="joining_date">
+
+                                @error('joining_date')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                        </div>
+
+
+                        <div class="row mb-3">
                             <label for="department" class="col-md-4 col-form-label text-md-end">{{ __('Department') }}</label>
 
                             <div class="col-md-6">
